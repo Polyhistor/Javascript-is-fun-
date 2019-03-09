@@ -1,36 +1,31 @@
 
 
 var boxes = document.querySelectorAll("td");
+console.log(boxes.length);
 
-
-for (var i=0; i<boxes.length; i++){
-  console.log(i);
+for (let i=0; i<boxes.length; i++){
+  // console.log(i);
   boxes[i].addEventListener('click',function(){
-      console.log(i);
-      boxes[i].textContent = 'x';
+      boxes[i].textContent = 'X';
   })
+
+  boxes[i].addEventListener('dblclick', function(){
+      boxes[i].textContent = 'O'
+  })
+
 }
 
-// comment
-
-// function makeadder(x){
-//   return function addup(y){
-//     return y+x;
-//   };
-// }
-//
-//
-// var add5 = makeadder(5);
-// var add10 = makeadder(10);
-//
-// console.log(add5(2));
-// console.log(add10(5));
 
 
+var resetbutton = document.getElementById('reset');
 
 
-// for (const box of boxes){
-//   box.addEventListener('click',function(){
-//       box.innerText = 'x';
-//   })
-// }
+resetbutton.addEventListener('click', function(){
+
+    for (let i=0; i<boxes.length; i++){
+
+        boxes[i].textContent = "";
+
+    }
+
+})
